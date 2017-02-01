@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Secure Programming</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+  
+	<div class="centered">
+	
+	   <h1>Login</h1>
+          
+           <form action="/loggedIn" method="post">
+          
+            <div class="field-wrap">
+            <input placeholder="Username" id="username" type="text" name="username" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <input placeholder="Password" id="password" type="password" name="password" required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="/signup">New User? Click here to register.</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+	  
+	  
+    </div>
+  </body>
+</html>

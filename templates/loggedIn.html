@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+<ul style="list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;">
+			<li style="float:right">
+				<a href="/" style=" display: block;color: white;text-align: center;padding: 14px 16px;text-decoration: none;">Logout</a>
+			</li>
+</ul>
+
+<p>Welcome {{user}}</p>
+<label>Browse File:</label>
+
+ <form action='/upload' method=post enctype=multipart/form-data>
+      <input type=file name=file>
+         <input id="fileupload" type=submit value=RATS Analysis>
+ </form>
+
+<form action='/uploadf' method=post enctype=multipart/form-data>
+      <input type=file name=ffile>
+         <input id="fileupload" type=submit value="Flaw Finder Analysis">
+ </form>
+
+
+
+
+</body>
+</html>

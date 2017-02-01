@@ -1,0 +1,64 @@
+
+<!-- here -->
+<html>
+  <head>
+    <title>Secure Programming</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  
+ <script type="text/javascript">
+ 
+  function checkForm()
+  {
+	var flag=false;
+	var uname = document.getElementById("un").value;	
+	var pass = document.getElementById("pw").value;	
+	var cpass = document.getElementById("cpw").value;	
+	var passL = document.getElementById("cpw").value.length;
+	var cpassL = document.getElementById("cpw").value.length;
+	var digitPattern = /[0-9]/;
+	var lowercasePattern = /[a-z]/;
+	var uppercasePattern = /[A-Z]/;
+	
+	if(uname == pass || pass<8 || pass!=cpass || !digitPattern.test(form.pw.value) || !lowercasePattern.test(form.pw.value) || !uppercasePattern.test(form.pw.value) ){
+		document.getElementById('showerror').innerHTML = "<h4>The following requirements should meet:</h4><li>User name should not be same as password</li><li>password should match confirm password field</li><li>3)password must be greater than or equals to eight character</li><li>4)Password must contain one uppercase letter</li><li>5) Password must contain one lowercase letter</li><li>6) Password must contain at least one value between 0-9</li></p>";
+	}else{
+		flag=true;
+	}
+	
+	return flag;
+  }
+
+  
+ </script>
+  
+  <body>
+  
+	<div class="centered">
+	
+	   <h1>Sign Up</h1>
+          
+           <form action="/register" method="post">
+          
+				<div class="field-wrap">
+					<input placeholder="User Name" id="un" type="text" name="un" autocomplete="off"/>
+				</div>
+          
+				<div class="field-wrap">
+					<input placeholder="Set a Password" id="pw" type="password" name="pw" autocomplete="off"/>
+				</div>
+				
+				<div class="field-wrap">
+					<input placeholder="Confirm Password" id="cpw" type="password" name="cpw" autocomplete="off"/>
+				</div>
+         
+				        
+				<button class="button button-block"/>Sign Up</button>
+          
+          </form>
+	  
+	<div id="showerror"></div>
+	  
+    </div>
+  </body>
+</html>
